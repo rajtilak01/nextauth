@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
    const user = await User.findById({_id: userId}).select("-password");
 
    if(!user) {
-    return NextResponse.json({message: "User not found in me section"}, {status: 400});
+    return NextResponse.json({message: "User not found in me section"}, {status: 400}); 
    }
 
    return NextResponse.json({
